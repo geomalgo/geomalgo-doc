@@ -32,17 +32,11 @@ import os
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.napoleon',
     'sphinx.ext.intersphinx',
     'sphinx.ext.coverage',
     'sphinx.ext.mathjax',
     'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
-
-    # from http://matplotlib.org/sampledoc/extensions.html
-    # 'matplotlib.sphinxext.only_directives',
-    'matplotlib.sphinxext.plot_directive',
-
     'nbsphinx',
 ]
 

@@ -40,32 +40,3 @@ Development and contact
 ``geomalgo`` is developed on `GitHub <https://github.com/dfroger/geomalgo>`_,
 were issues and pull requests can be made. Or do not hesitate to send me an
 email at david.froger@mailoo.org .
-
-How it looks
-------------
-
-.. plot::
-    :include-source:
-
-    from pylab import *
-    import geomalgo as ga
-
-    A = ga.Point2D(0, 0, name='A')
-    B = ga.Point2D(4, 0, name='B')
-    C = ga.Point2D(2, 4, name='C')
-
-    ABC = ga.Triangle2D(A, B, C)
-
-    figure(figsize=(4,4))
-
-    A.plot()
-    B.plot()
-    C.plot()
-    ABC.plot()
-
-    text(ABC.center.x, ABC.center.y,
-         'area = {}'.format(ABC.area), ha='center')
-
-    xlim(-1, 5)
-    ylim(-1, 5)
-    show()
