@@ -4,13 +4,6 @@ Point2D
 
 The Point2D class represents points in two-dimensional space.
 
-.. doctest::
-
-    >>> import geomalgo as ga
-
-    >>> A = ga.Point2D(2, 1, name='A')
-    >>> B = ga.Point2D(6, 4, name='B')
-
 Comute distance between two points:
 
     >>> A.distance(B)
