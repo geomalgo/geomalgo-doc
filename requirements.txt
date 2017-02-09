@@ -1,3 +1,4 @@
+sphinx
 ipython
 jupyter_client
 nbsphinx
