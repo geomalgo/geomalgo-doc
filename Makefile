@@ -58,7 +58,7 @@ clean:
 
 .PHONY: html
 html:
-	PYTHONPATH=.. $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	PYTHONPATH=../geomalgo $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 
@@ -231,3 +231,8 @@ dummy:
 	$(SPHINXBUILD) -b dummy $(ALLSPHINXOPTS) $(BUILDDIR)/dummy
 	@echo
 	@echo "Build finished. Dummy builder generates no files."
+
+# ================================ notebooks =================================
+
+nb:
+	PYTHONPATH=$(PWD)/../geomalgo CFLAGS='-Wno-unused-function -Wno-unused-variable' jupyter notebook --NotebookApp.token= --brower=firefox
