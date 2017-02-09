@@ -32,8 +32,6 @@ Structures
    Test whether two points :math:`A` and :math:`B` are strictly equal.
 
 
-.. literalinclude:: examples/cpoint2d.pyx
-
 
 Computational functions
 =======================
