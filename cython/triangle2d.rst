@@ -103,3 +103,47 @@ Computational functions
     Compute factors for linear interpolation of data defined on triangle
     vertices :math:`A`, :math:`B` and :math:`C` to points included in the
     triangle.
+
+Relations between Python and Cython API
+=======================================
+
+.. digraph:: Triangle2D
+    :align: center
+
+    Triangle2D -> "CTriangle2D"
+
+    Triangle2D -> "Point2D A"
+    Triangle2D -> "Point2D B"
+    Triangle2D -> "Point2D C"
+
+    CTriangle2D -> "CPoint2D* A"
+    CTriangle2D -> "CPoint2D* B"
+    CTriangle2D -> "CPoint2D* C"
+
+    "Point2D A" -> "CPoint2D* A"
+    "Point2D B" -> "CPoint2D* B"
+    "Point2D C" -> "CPoint2D* C"
+
+    "CPoint2D* A" -> "ax"
+    "CPoint2D* A" -> "ay"
+
+    "CPoint2D* B" -> "bx"
+    "CPoint2D* B" -> "by"
+
+    "CPoint2D* C" -> "cx"
+    "CPoint2D* C" -> "cy"
+
+    "CTriangle2D" [fillcolor=gray,style="rounded,filled"]
+
+    "CPoint2D* A" [fillcolor=gray,style="rounded,filled"]
+    "CPoint2D* B" [fillcolor=gray,style="rounded,filled"]
+    "CPoint2D* C" [fillcolor=gray,style="rounded,filled"]
+
+    "ax" [fillcolor=gray,style="rounded,filled"]
+    "ay" [fillcolor=gray,style="rounded,filled"]
+
+    "bx" [fillcolor=gray,style="rounded,filled"]
+    "by" [fillcolor=gray,style="rounded,filled"]
+
+    "cx" [fillcolor=gray,style="rounded,filled"]
+    "cy" [fillcolor=gray,style="rounded,filled"]

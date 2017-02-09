@@ -9,4 +9,4 @@ Cython API
     segment2d
     vector2d
     triangle2d
-    triangulation
+    triangulation2d

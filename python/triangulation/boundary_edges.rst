@@ -13,6 +13,7 @@ Contruction
     It returns:
         a BoundaryEdges object
         a InternEdges object
+        a EdgeMap object
 
 
 Attributes

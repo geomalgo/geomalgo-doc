@@ -2,7 +2,7 @@
 Triangulation2D
 ***************
 
-See :ref:`tuto/triangulation_intro.ipynb` for a introduction on
+See :ref:`tuto/triangulation.ipynb` for a introduction on
 :py:class:`Triangulation2D`.
 
 Contruction
