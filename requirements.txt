@@ -1,4 +1,4 @@
-sphinx
+sphinx==1.5.2
 ipython
 jupyter_client
 nbsphinx
