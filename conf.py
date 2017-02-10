@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# geomalgo documentation build configuration file, created by
+# GeomAlgo documentation build configuration file, created by
 # sphinx-quickstart on Thu Aug 18 13:09:05 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'geomalgo'
+project = 'GeomAlgo'
 copyright = '2016, David Froger'
 author = 'David Froger'
 

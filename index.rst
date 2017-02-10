@@ -1,6 +1,3 @@
-GeomAlgo documentation
-======================
-
 ``geomalgo`` aims at prodiving basic geometric 2D and 3D algorithms, for
 example computing the area of 2D triangle, or finding intersection points of
 3D triangle and a 3D segment.
@@ -10,8 +7,6 @@ example computing the area of 2D triangle, or finding intersection points of
 
 ``geomalgo`` provides a convenient Python API, and a Cython API to obtain ``C``
 performances, typically for computation inside loops.
-
-Get started with the examples gallery, and read the details in API section.
 
 Installation
 ------------
