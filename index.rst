@@ -29,9 +29,12 @@ Documentation
 .. toctree::
     :maxdepth: 1
 
-    tuto/index
-    python/index
-    cython/index
+    tutorial
+    points
+    vectors
+    segments
+    triangles
+    triangulation
     devel
 
 Development and contact
