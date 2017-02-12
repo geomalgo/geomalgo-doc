@@ -235,4 +235,4 @@ dummy:
 # ================================ notebooks =================================
 
 nb:
-	PYTHONPATH=$(PWD)/../geomalgo CFLAGS='-Wno-unused-function -Wno-unused-variable' jupyter notebook --NotebookApp.token= --brower=firefox
+	PYTHONPATH=$(PWD)/../geomalgo CFLAGS='-Wno-unused-function -Wno-unused-variable' jupyter notebook --NotebookApp.token= --browser=firefox
