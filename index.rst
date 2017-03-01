@@ -30,6 +30,7 @@ Documentation
     segments
     triangles
     triangulation
+    triangle3d
     devel
 
 Development and contact
