@@ -3,6 +3,7 @@
 import argparse
 import glob
 import pathlib
+from typing import List
 
 
 def parse_command_line():
@@ -41,9 +42,16 @@ def read_pxd_files(geomalgo):
             for fp in geomalgo.rglob('*.pxd')}
 
 
-def extract_cdef_functions(pxd: dict):
-    vector2d = pathlib.Path('base2d/vector2d.pxd')
-    print(pxd[vector2d])
+def extract_cdef_functions(lines: List[str]):
+    for line in lines:
+        words = line.split()
+        if len(words) < 2:
+            continue
+        if not words[0] == 'cdef':
+            continue
+        if words[1] in ('struct', 'class'):
+            continue
+        print(line)
 
 
 def main():
