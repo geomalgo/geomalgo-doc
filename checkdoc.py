@@ -33,7 +33,7 @@ def find_geomalgo_root(geomalgo, testfile='base2d.pxd'):
         return geomalgo / 'geomalgo'
 
     else:
-        raise OSError("geomalgo path: {} is wrong".format(geomalgo))
+        raise OSError(f'geomalgo path: {geomalgo} is wrong')
 
 
 def read_pxd_files(geomalgo):
@@ -41,7 +41,7 @@ def read_pxd_files(geomalgo):
             for fp in geomalgo.rglob('*.pxd')}
 
 
-def extract_cdef_functions(pxd):
+def extract_cdef_functions(pxd: dict):
     vector2d = pathlib.Path('base2d/vector2d.pxd')
     print(pxd[vector2d])
 
