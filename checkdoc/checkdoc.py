@@ -42,8 +42,33 @@ def read_pxd_files(geomalgo):
             for fp in geomalgo.rglob('*.pxd')}
 
 
-def extract_cdef_functions(lines: List[str]):
-    for line in lines:
+def search_cdef_functions(lines: List[str]) -> List[int]:
+    """First line number of all cdef functions
+
+    Line numbers are counted from zero.
+
+    Example
+    -------
+
+        >>> lines = [
+        ...     'cdef void foo()',  # 0  <- first cdef function
+        ...     '',                 # 1
+        ...     'cdef struct A:',   # 2
+        ...     '    double x',     # 3
+        ...     '    double y',     # 4
+        ...     '',                 # 5
+        ...     '# comment',        # 6
+        ...     'cdef void bar()',  # 7  <- second cdef function
+        ... ]
+
+        >>> search_cdef_functions(lines)
+        [0, 7]
+    """
+    line_numbers = []
+    for i, line in enumerate(lines):
+        # A line like '    cdef' is a method, not a function.
+        if not line or line[0] == ' ':
+            continue
         words = line.split()
         if len(words) < 2:
             continue
@@ -51,14 +76,14 @@ def extract_cdef_functions(lines: List[str]):
             continue
         if words[1] in ('struct', 'class'):
             continue
-        print(line)
+        line_numbers.append(i)
+    return line_numbers
 
 
 def main():
     args = parse_command_line()
     geomalgo = find_geomalgo_root(args.geomalgo)
     pxd = read_pxd_files(geomalgo)
-    extract_cdef_functions(pxd)
 
 
 if __name__ == '__main__':
