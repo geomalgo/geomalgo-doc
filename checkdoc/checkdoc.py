@@ -42,7 +42,7 @@ def read_pxd_files(geomalgo):
             for fp in geomalgo.rglob('*.pxd')}
 
 
-def search_cdef_functions(lines: List[str]) -> List[int]:
+def locate_cdef_functions(lines: List[str]) -> List[int]:
     """First line number of all cdef functions
 
     Line numbers are counted from zero.
@@ -61,7 +61,7 @@ def search_cdef_functions(lines: List[str]) -> List[int]:
         ...     'cdef void bar()',  # 7  <- second cdef function
         ... ]
 
-        >>> search_cdef_functions(lines)
+        >>> locate_cdef_functions(lines)
         [0, 7]
     """
     line_numbers = []
@@ -78,6 +78,27 @@ def search_cdef_functions(lines: List[str]) -> List[int]:
             continue
         line_numbers.append(i)
     return line_numbers
+
+
+class Signature:
+
+    def __init__(self, lines: List[str], start, end):
+        pass
+
+
+def locate_cdef_signature(lines: List[str], line_number: int):
+    count = 0
+    for iline, line in enumerate(lines[line_number:]):
+        for icol, char in enumerate(line):
+            if char == '(':
+                if count==0:
+                    start = (line_number+iline, icol+1)
+                count += 1
+            elif char == ')':
+                count -= 1
+                if count==0:
+                    end = (line_number+iline, icol)
+                    return start, end
 
 
 def main():

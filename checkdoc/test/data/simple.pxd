@@ -30,15 +30,12 @@ cdef inline bint foo_equal(CFoo* self, CFoo* other):
 
 cdef void a_function(CBar* bar, const CFoo* B, const CFoo* A)
 
-cdef void a_multiline_funciton(CFoo* result, CFoo* start,
+cdef void a_multiline_function(CFoo* result, CFoo* start,
                                double factor, CBar* bar)
 
 cdef inline double inline_function(CFoo* A, CFoo* B):
     return (B.x - A.x)**2 \
          + (B.y - A.y)**2
-
-cdef inline double another_inline_function(CFoo* A, CFoo* B):
-    return sqrt(inline_function(A, B))
 
 
 # ============================================================================
